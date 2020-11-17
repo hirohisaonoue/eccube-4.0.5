@@ -1,0 +1,137 @@
+{#
+Project Name: 商品情報項目追加プラグイン for 4.0
+Copyright(c) 2018 Kenji Nakanishi. All Rights Reserved.
+
+https://www.facebook.com/web.kenji.nakanishi
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+
+{% extends '@admin/default_frame.twig' %}
+
+{% set menus = ['store', 'plugin', 'plugin_list'] %}
+
+{% block title %}{{ 'sheeb_expand_product_column.admin.config.title'|trans }}{% endblock %}
+{% block sub_title %}{{ 'sheeb_expand_product_column.admin.config.subtitle'|trans }}{% endblock %}
+
+{% form_theme form 'Form/bootstrap_4_layout.html.twig' %}
+
+{% block stylesheet %}{% endblock stylesheet %}
+
+{% block javascript %}{% endblock javascript %}
+
+{% block main %}
+    <div class="c-contentsArea__cols">
+        <div class="c-contentsArea__primaryCol">
+            <div class="c-primaryCol">
+                <div class="card rounded border-0 mb-4">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="card-title">{{ 'sheeb_expand_product_column.admin.config.form_label'|trans }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <form name="form1" id="form1" method="post" action="">
+                            <table class="table table-sm">
+                                <thead>
+                                <tr>
+                                    <th class="border-top-0 pt-2 pb-2 text-center">{{'sheeb_expand_product_column.admin.config.header.example'|trans}}</th>
+                                    <th class="border-top-0 pt-2 pb-2 text-center">{{'sheeb_expand_product_column.admin.config.header.name'|trans}}</th>
+                                    <th class="border-top-0 pt-2 pb-2 text-center">{{'sheeb_expand_product_column.admin.config.header.type'|trans}}</th>
+                                    <th class="border-top-0 pt-2 pb-2 text-center">{{'sheeb_expand_product_column.admin.config.header.is_multiple'|trans}}</th>
+                                    <th class="border-top-0 pt-2 pb-2 text-center">{{'sheeb_expand_product_column.admin.config.header.is_searchable'|trans}}</th>
+                                    <th class="border-top-0 pt-2 pb-2 text-center">&nbsp;</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for ProductColumn in ProductColumns %}
+                                    <tr id="ex-member-{{ ProductColumn.id }}">
+                                        <td class="align-middle text-center pl-3">
+                                            EX_PRODUCT.{{ ProductColumn.code }}
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            {{ ProductColumn.name }}
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            {{ ProductColumn.type }}
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            {{ ProductColumn.is_multiple }}
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            {{ ProductColumn.is_searchable }}
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <div class="row justify-content-end">
+                                                <div class="col-auto text-center">
+                                                    <a class="btn btn-ec-actionIcon action-edit"
+                                                       href="{{ url('sheeb_expand_product_column_admin_config_edit', { 'id' : ProductColumn.id }) }}"
+                                                       data-toggle="tooltip"
+                                                       data-placement="top"
+                                                       data-original-title="{{ 'sheeb_expand_product_column.admin.config.edit.form_label'|trans }}">
+                                                        <i class="fa fa-pencil fa-lg text-secondary" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col-auto text-center">
+                                                    <a class="btn btn-ec-actionIcon action-delete"
+                                                       data-toggle="modal"
+                                                       data-target="#member_delete_{{ ProductColumn.id }}">
+                                                        <i class="fa fa-close fa-lg text-secondary" aria-hidden="true"></i>
+                                                    </a>
+                                                    <div class="modal fade" id="member_delete_{{ ProductColumn.id }}" tabindex="-1"
+                                                         role="dialog"
+                                                         aria-labelledby="member_delete_{{ ProductColumn.id }}" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title font-weight-bold">
+                                                                        {{ 'sheeb_expand_product_column.admin.config.delete.title'|trans }}</h5>
+                                                                    <button class="close" type="button"
+                                                                            data-dismiss="modal"
+                                                                            aria-label="Close"><span
+                                                                            aria-hidden="true">×</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body text-left">
+                                                                    <p class="text-left">
+                                                                        {{ 'sheeb_expand_product_column.admin.config.delete.body'|trans }}</p>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button class="btn btn-ec-sub" type="button" data-dismiss="modal">{{ 'sheeb_expand_product_column.admin.config.delete.cancel'|trans }}
+                                                                    </button>
+                                                                    <a class="btn btn-ec-delete"
+                                                                       href="{{ url('sheeb_expand_product_column_admin_config_delete', {id: ProductColumn.id}) }}"
+                                                                        {{ csrf_token_for_anchor() }}
+                                                                       data-method="delete" data-confirm="false">
+                                                                        {{ 'sheeb_expand_product_column.admin.config.delete.execute'|trans }}
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+                <div id="ex-member-new" class="card rounded border-0">
+                    <div class="card-body p-4">
+                        <div class="text-center btn-area-bottom">
+                            <a href="{{ url('sheeb_expand_product_column_admin_config_new') }}" class="btn btn-ec-regular pl-4 pr-4">
+                                {{ 'sheeb_expand_product_column.admin.config.add'|trans }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

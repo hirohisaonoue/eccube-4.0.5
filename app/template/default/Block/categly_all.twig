@@ -1,0 +1,28 @@
+これは子カテゴリーまで
+{% set cate_childs = Category.getDescendants %}
+{% if cate_childs %}
+{% set h = Category.hierarchy + 1 %}
+<div id="cate_list">
+<h2 class="cate_h2">{{ subtitle }}　カテゴリー一覧</h2>
+<ul class="cate_list">
+{% for cate in cate_childs %}
+    {% if h == cate.hierarchy %}
+    <li><a href="/products/list?category_id={{ cate.id }}">{{ cate.name }}</a></li>
+    {% endif %}
+{% endfor %}
+</ul>
+</div>
+{% endif %}
+
+これは孫カテゴリーまで
+{% set cate_childs = Category.getDescendants %}
+{% if cate_childs %}
+<div id="cate_list">
+<h2 class="cate_h2">{{ subtitle }}　カテゴリー一覧</h2>
+<ul class="cate_list">
+{% for cate in cate_childs %}
+  <li><a href="/products/list?category_id={{ cate.id }}">{{ cate.name }}</a></li>
+{% endfor %}
+</ul>
+</div>
+{% endif %}

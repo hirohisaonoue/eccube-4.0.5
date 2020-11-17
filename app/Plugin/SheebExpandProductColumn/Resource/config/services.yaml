@@ -1,0 +1,12 @@
+parameters:
+    sheeb_expand_product_column.product.detail.seo.activate: true
+    sheeb_expand_product_column.choices.column_types:
+      sheeb_expand_product_column.admin.config.types.text: "text"
+      sheeb_expand_product_column.admin.config.types.textarea: "textarea"
+      sheeb_expand_product_column.admin.config.types.selectbox: "selectbox"
+      sheeb_expand_product_column.admin.config.types.radiobutton: "radiobutton"
+      sheeb_expand_product_column.admin.config.types.images: "images"
+      sheeb_expand_product_column.admin.config.types.checkbox: "checkbox"
+    sheeb_expand_product_column.choices.switch:
+      sheeb_expand_product_column.admin.config.choices.switch.on: 1
+      sheeb_expand_product_column.admin.config.choices.switch.off: 0

@@ -1,0 +1,38 @@
+{#
+Project Name: 商品情報項目追加プラグイン for 4.0
+Copyright(c) 2018 Kenji Nakanishi. All Rights Reserved.
+
+https://www.facebook.com/web.kenji.nakanishi
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+{% block seo %}
+    <!-- SEO meta START -->
+    {% if EX_PRODUCT.description is defined and EX_PRODUCT.description is not empty %}
+        {% set description = exValue(EX_PRODUCT, "description") %}
+        <meta name="description" content="{{ description }}">
+        <meta property="og:description" content="{{ description }}" >
+    {% elseif Product is defined and Product.description_detail is not empty %}
+        {% set description = Product.description_detail|raw|replace({'\n':' '})|replace({'\r':''})|replace({'  ':' '}) %}
+        <meta name="description" content="{{ description }}">
+        <meta property="og:description" content="{{ description }}" >
+    {% endif %}
+    {% if EX_PRODUCT.keywords is defined and EX_PRODUCT.keywords is not empty  %}
+        <meta name="keywords" content="{{ exValue(EX_PRODUCT, "keywords") }}">
+    {% elseif Product is defined and Product.search_word is not empty %}
+        <meta name="keywords" content="{{ Product.search_word }}">
+    {% endif %}
+    {% if EX_PRODUCT.og_image is defined and EX_PRODUCT.og_image is not empty %}
+        <meta property="og:image" content="{{ getDomain() }}{{ asset(exValue(EX_PRODUCT, "og_image"), 'save_image') }}" />
+    {% endif %}
+    <meta property="og:url" content="{{ getPageUri() }}" />
+    <meta property="og:title" content="{{ BaseInfo.shop_name }}{% if subtitle is defined and subtitle is not empty %} / {{ subtitle }}{% elseif title is defined and title is not empty %} / {{ title }}{% endif %}" />
+    <meta property="og:type" content="product">
+    <meta property="og:site_name" content="{{ BaseInfo.shop_name }}" />
+    <meta property="og:locale" content="ja_JP" />
+    {% if EX_PRODUCT.og_app_id is defined and EX_PRODUCT.og_app_id is not empty %}
+        <meta property="fb:app_id" content="{{ exValue(EX_PRODUCT, "og_app_id") }}">
+    {% endif %}
+    <!-- SEO meta END -->
+{% endblock %}

@@ -1,0 +1,1284 @@
+/*=======================================
+	header
+=======================================*/
+header {
+	padding: 10px 0 0 0;
+	margin-bottom: 50px;
+}
+
+.headerarea {
+	width: 100%;
+	max-width: 1130px;
+	margin: auto;
+	display: table;
+	position: relative;
+}
+
+.headerarea #logo {
+	display: table-cell;
+	vertical-align: middle;
+	width: 170px;
+}
+
+.headerarea img.akibakan-logo { margin-bottom: 5px;}
+
+#header-information {
+	text-align: right;
+}
+
+#search-form { margin-top: 10px;}
+#search-form input {
+	border: 1px #999 solid;
+	vertical-align: bottom;
+}
+
+#search-form input#keyword {
+	padding: 5px;
+	width: 80%;
+	height: 40px;
+	font-size: 16px;
+
+	-moz-border-top-left-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	border-top-left-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+#search-form input#button {
+	padding: 4px;
+	cursor: pointer;
+	width: 15%;
+	min-width: 80px;
+	height: 40px;
+	
+	border-left: none;
+	-moz-border-top-right-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	border-top-right-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+#search-form input#button:hover {
+	background-color: #c5c5c5;
+}
+
+#search-form input#button:active {
+	background-color: #a8a8a8;
+}
+
+#cart-button {
+	cursor: pointer;
+	min-width: 80px;
+	height: 50px;
+	float: right;
+	background: #f8f8f8;
+
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/*=======================================
+	globalnavarea
+=======================================*/
+#globalnavarea {
+	margin: 10px 0 0 0;
+	background: #000;
+}
+
+#nav {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+#globalnav ul {
+	width: 100%;
+	margin: auto;
+	display: table;
+	position: relative;
+	padding: 6px 20px;
+}
+
+#globalnav ul li {
+	width: 20%;
+	float: left;
+	text-align: center;
+	margin: 6px 0;
+	white-space: nowrap;
+}
+
+#globalnav ul li a { color: #fff;}
+#globalnav ul li a:hover { font-weight: normal;}
+
+#catnav {
+	/* widthは各レスポンシブ設定へ */
+	position: absolute;
+	z-index: 9999;
+}
+
+#catnav ul {
+	padding-top: 2px;
+}
+
+#catnav ul ul {
+	padding-top: 0px;
+}
+
+
+/*#catnav li {
+	margin-bottom: 7px;
+	padding: 3px 10px;
+	border-bottom: 1px solid #999;
+}
+
+#catnav li: last-child {
+	border-bottom: none;
+}
+
+#catnav a { display: block;}
+
+#menu { display: none; background: #ffff;}
+*/
+
+/*=======================================
+	contents
+=======================================*/
+#contents {
+	overflow: hidden;
+	margin: auto;
+	padding: 0 20px;
+	padding-bottom: 100px;
+	clear: both;
+}
+
+#contents p.pan { margin: 0 0 30px 0!important; font-size: 14px!important;}
+
+/*===============================================
+	banner/topics
+===============================================*/
+/* imageサイズはflexslider.css .flexslider .slides img */
+
+.topics { margin-bottom: 40px;}
+
+.topics h2 {
+	background: #000;
+	padding: 5px 10px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 900;
+	-moz-border-radius: 5px; /* 古いFirefox */
+	-webkit-border-radius: 5px; /* 古いSafari,Chrome */
+	border-radius: 5px; /* CSS3 */
+}
+
+.topics-contents {
+	margin-top: 10px;
+	padding-right: 10px;
+	overflow-y: scroll;
+	height: 320px;
+}
+
+.topics-contents img {
+	width: 100px;
+	float: right;
+	margin-left: 10px;
+}
+
+.topics-contents div { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #ccc;}
+.topics-contents p { margin: 10px 0;}
+.topics-contents span { font-weight: 900; color: #e00; margin-left: 10px;}
+
+/*===============================================
+	item-area
+===============================================*/
+
+#item-area h2 { font-size: 16px; font-weight: 900; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #666;}
+.slider02 li.item img { height: 120px; width: 120px;}
+#item-area li p { font-size: 12px;} 
+
+.recommend { margin-bottom: 20px; }
+.recommend div.large { margin-bottom: 10px; padding-top: 20px; border-top: 1px dashed #666;}
+.recommend div.large a { font-weight: bold; display: block; margin-bottom: 8px;}
+.recommend div.large img { float: left; margin-right: 10px;}
+.recommend div.large p { margin-left: 130px; margin-bottom: 8px;}
+.recommend div.large span { color: #e00;}
+
+/*===============================================
+	list
+===============================================*/
+
+.ec-shelfGrid__item .price02-default {
+	font-weight: bold;
+	color: #f00;;
+	margin-top: 10px;
+	font-size: 18px;
+}
+
+#list h1 {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 16px;
+	display: inline-block;
+}
+
+#list-head {
+	background: #eee;
+
+	-moz-border-radius: 5px;
+	-webki-border-radius: 5px;
+	border-radius: 5px;
+	margin-bottom: 60px;
+	padding: 10px;
+	overflow: hidden;
+}
+
+#list-head .number {
+	font-size: 12px;
+	float: left;
+	line-height: 24px;
+	vertical-align: middle;
+}
+
+#list-head .switchcss { float: right;}
+
+.list-stock { color: #f00; font-weight: bold;}
+.list-price b { color: #f00;}
+.list-price s { color: #666; font-size: 92%;}
+.list-price span { color: #666; font-size: 92%;}
+
+.list-icons { padding-top: 10px; clear: both;}
+
+#ejection {
+	text-align: center;
+}
+
+#ejection ul li { display: inline-block;}
+
+#ejection ul li a { display: block; border: 1px solid #ccc; padding: 5px;}
+#ejection ul li b a { font-weight: normal; pointer-events: none; color: #000; background: #ccc;}
+
+
+/*===============================================
+	detail
+===============================================*/
+#data-block {
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px dashed #ccc;
+
+}
+
+#detail-img .thumbnail img {
+	border: 1px solid #ccc;
+}
+
+div#detail-data ul { list-style: none; margin: 10px 0 30px 0px;}
+div#detail-data li { line-height: 160%;}
+div#detail-data li span.items { vertical-align: bottom!important;}
+div#detail-data li span.items,.text01 {
+	display: -moz-inline-box!important; /* firefox 2 */
+	display: inline-block!important;
+	/display: inline!important; /* IE6,IE7 */
+	/zoom: 1;
+	width: 85px;
+	vertical-align: top;
+	color: #000!important;
+}
+
+#detail-data h1 {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+
+#detail-cart {	
+	-moz-border-radius: 5px; /* 古いFirefox */
+	-webkit-border-radius: 5px; /* 古いSafari,Chrome */
+	border-radius: 5px; /* CSS3 */
+	border: 1px #999 solid;
+	line-height: 200%;
+}
+
+#detail-cart #detail-price1 {
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 900;
+	font-size: 32px;
+	color: #e00;
+}
+
+#detail-cart #detail-price1 span {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#detail-cart #detail-price2 {
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	margin-bottom: 16px;
+}
+
+#detail-cart #detail-price2 span {
+	font-size: 12px;
+}
+
+#detail-cart #stock-status {
+	font-size: 16px;
+}
+
+#detail-cart #quantity {
+	margin-bottom: 16px;
+	cursor: pointer;
+}
+
+#detail-cart #submit-button {
+	padding: 15px 0px;
+	font-size: 1.2em;
+	background: linear-gradient(0deg, #0077cc, #41a0eb);
+	color: #fff;
+	border-style: none;
+	font-weight: 900;
+	width: 100%;
+
+	-moz-border-radius: 5px; /* 古いFirefox */
+	-webkit-border-radius: 5px; /* 古いSafari,Chrome */
+	border-radius: 5px; /* CSS3 */
+	border: 1px #0077cc solid;
+}
+
+#detail-cart #submit-button:hover {
+	background: #0077cc;
+	cursor: pointer;
+}
+
+#top-main { float: left;}
+#side { float: right;}
+
+/*===============================================
+	998px以上
+===============================================*/
+@media screen and (min-width: 998px) {
+#contents { max-width: 1200px;}
+#search-form { position: absolute; bottom: 10px; width: 65%; }
+#cart-button { position: absolute; bottom: 10px; right: 20px; width: 15%;}
+
+/* #globalnav *************************** */
+
+#globalnav {
+	margin-left: 240px;
+}
+
+#nav {
+	padding: 3px 20px;
+}
+
+#top-main {
+	width: 100%;
+	margin-right: -260px;
+	padding-right: 260px;
+	box-sizing: border-box;
+}
+	
+#side {
+	width: 240px;
+}
+
+#side img { display: block; width: 100%; height: 100%; margin-bottom: 5px;}
+
+.recommend { border-bottom: 1px dashed #666; }
+.recommend div.large { width: 49%; display: inline-block; vertical-align: top; }
+.recommend div.large a { font-weight: bold; display: block; margin-bottom: 8px;}
+.recommend div.large img { float: left; margin-right: 10px;}
+.recommend div.large p { margin-left: 130px; margin-bottom: 8px;}
+.recommend div.large span { color: #e00;}
+.recommend div.large:nth-child(2) { border: none; padding-top: 0;}
+.recommend div.large:nth-child(3) { border: none; padding-top: 0;}
+
+/* list ********************************************* */
+#list {
+	margin-left: 260px;
+	float: right;
+}
+
+#list-contents #item-area { /* レコメンドスライド */
+	clear: both;
+}
+	
+/* list-menu ############################################ */
+#list-menu {
+	position: absolute;
+	float: left;
+	width: 240px;
+}
+
+#list-menu ul {
+	border-radius: 5px
+	-moz-bordert-radius: 5px;
+	-webki-border-radius: 5px;
+	border-radius: 5px;
+	padding: 10px 0;
+}
+
+#list-menu > ul {
+	border: 1px solid #000;
+	margin-bottom: 30px;
+}
+
+#list-menu ul li {
+}
+
+#list-menu ul li: last-child { border: none;}
+#list-menu ul li a {
+	display: block;
+	padding: 5px 10px;
+}
+
+#list-menu ul li ul { padding: 0 5px 20px 20px;}
+#list-menu ul p {
+	margin: -10px 0 10px 0;
+	font-weight: bold;
+	background: #000;
+	color: #fff;
+	padding: 5px 10px;
+	text-align: center;
+}
+
+#list-menu ul li ul li a {
+	padding: 3px 5px;
+	font-size: 90%;
+	font-weight: normal;
+}
+
+#list-menu ul li a:hover { background: #ccc;}
+	
+/*===============================================
+	detail
+=============================================== */
+
+#detail-img {	
+	width: 32%;
+	margin-right: 2%;
+	float: left;
+	overflow: hidden;
+}
+
+#detail-img img.detail-img {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#detail-include {
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	
+}
+
+#detail-data {
+	width: 40%;
+	margin-right: 2%;
+	float: left;
+	overflow: hidden;
+}
+
+#data-block #item-data {
+	line-height: 180%;
+	width: 64%;
+	margin-left : 34%;
+}
+
+#detail-cart {
+	width: 24%;
+	border: 1px solid #000;
+	float: left;
+	overflow: hidden;
+	padding: 20px 10px 30px 10px;
+	margin-bottom: 40px;
+}
+
+#detail-data .list-icons { margin-bottom: 30px;}
+#detail-data .list-icons { margin-bottom: 30px;}
+
+}
+
+/*===============================================
+	768pxまで
+=============================================== */
+@media screen and (min-width: 769px) and (max-width: 997px) {
+#item-area { clear: both;}
+#search-form { position: absolute; bottom: 10px; width: 60%; }
+#cart-button { position: absolute; bottom: 10px; right: 20px; width: 12%;}
+
+/* globalnav *************************** */
+#nav {
+	padding: 3px 20px;
+}
+	
+#globalnav {
+	margin-left: 240px;
+}
+
+/*#catnav {
+	width: 240px;
+	border: 1px solid #fff;
+	border-radius: 5px
+	-moz-bordert-radius: 5px;
+	-webki-border-radius: 5px;
+	border-radius: 5px;
+}*/
+
+#globalnav ul li { width: 25%;}
+
+#globalnav ul li:nth-child(3),
+#globalnav ul li:nth-child(5) { display: none;}
+
+
+#top-main {
+	width: 73%;
+	box-sizing: border-box;
+}
+	
+#side {
+	width: 25%;
+}
+
+#side img { display: block; width: 100%; height: 100%; margin-bottom: 5px;}
+
+
+.recommend div.large { width: 100%; border-top: 1px dashed #666; padding-bottom: 20px; }
+.recommend div.large: before { clear: both;}
+.recommend div.large a { font-weight: bold; display: block; margin-bottom: 8px;}
+.recommend div.large img { margin-right: 10px;}
+.recommend div.large p { margin-left: 130px; margin-bottom: 8px;}
+.recommend div.large span { color: #e00;}
+.recommend div.large:nth-child(2) { border: none;}
+
+
+/* list ********************************************* */
+#list {
+	margin-left: 260px;
+	float: right;
+}
+
+#list-contents #item-area { /* レコメンドスライド */
+	clear: both;
+}
+	
+/* list-menu ############################################ */
+#list-menu {
+	position: absolute;
+	float: left;
+	width: 240px;
+}
+
+#list-menu ul {
+	border-radius: 5px
+	-moz-bordert-radius: 5px;
+	-webki-border-radius: 5px;
+	border-radius: 5px;
+	padding: 10px 0;
+}
+
+#list-menu > ul {
+	border: 1px solid #000;
+	margin-bottom: 30px;
+}
+
+#list-menu ul li {
+}
+
+#list-menu ul li: last-child { border: none;}
+#list-menu ul li a {
+	display: block;
+	padding: 5px 10px;
+}
+
+#list-menu ul li ul { padding: 0 5px 20px 20px;}
+#list-menu ul p {
+	margin: -10px 0 10px 0;
+	font-weight: bold;
+	background: #000;
+	color: #fff;
+	padding: 5px 10px;
+	text-align: center;
+}
+
+#list-menu ul li ul li a {
+	padding: 3px 5px;
+	font-size: 90%;
+	font-weight: normal;
+}
+
+#list-menu ul li a:hover { background: #ccc;}
+	
+
+/*===============================================
+	detail
+=============================================== */
+
+#detail-img {	
+	width: 48%;
+	margin-right: 2%;
+	float: left;
+	overflow: hidden;
+}
+
+#detail-img img.detail-img {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#detail-include {
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+}
+
+#detail-data {
+	width: 50%;
+	margin: 0;
+	float: left;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+
+#data-block #item-data {
+	line-height: 180%;
+	width: 100%;
+	overflow: hidden;
+	margin: 0; 
+}
+
+#detail-cart {
+	width: 50%;
+	border: 1px solid #000;
+	float: left;
+	overflow: hidden;
+	padding: 20px 10px 30px 10px;
+	margin-bottom: 40px;
+}
+
+
+#detail-include img.left {
+	width: 40%;
+	height: 100%;
+}
+
+}
+
+/*===============================================
+	768pxまで
+===============================================*/
+
+@media screen and (max-width: 768px) {
+#contents {
+	min-width: 340px;
+	padding: 0 10px 50px 10px;
+}
+
+.headerarea { padding: 0 5px;}
+.headerarea #logo {
+	width: 100%!important;
+	display: inherit;
+}
+
+.headerarea img.akibakan-logo { display:  block;}
+.headerarea img.apple-logo { visibility: hidden;}
+
+/*#header-information {
+	position: relative;
+	bottom: 0;
+}*/	
+
+#search-form { min-width: 320px;}
+#search-form input#keyword { width: 75%; border-right: none; }
+#search-form input#button { width: 25%; border-left: none; background: #aaa;}
+
+#cart-button { position: absolute; top: 20px; right: 20px; width: 15%;}
+
+
+#top-main {
+	float: inherit;
+	width: 100%;
+	margin-right: 0;
+	padding-right: 0;
+}
+
+#side {
+	float: inherit;
+	width: 100%!important;
+	margin-bottom: 100px;
+}
+
+#side img { display: table-cell!important; width: 23%; height: 23%; margin-right: 2%; margin-bottom: 10px; box-sizing: border-box;}
+#side img:nth-child(4) { margin-right: 0;}
+
+#catnav {
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+#catnav {
+	position: inherit;
+}
+	
+#list-menu {
+	clear: both;
+	width: 100%;
+}
+
+.ddsmoothmenu ul li { width: 100%!important;}
+.ddsmoothmenu ul li a { padding: 20px 0!important;}
+.ddsmoothmenu ul li#toggle a {
+	-moz-bordert-radius: 0!important;
+	-webki-border-radius: 0!importantx;
+	border-radius: 0!important;
+	text-align: center;
+}
+#globalnavarea { background-color: inherit;}
+#globalnav { display: none;}
+#menu { display: none;}
+#menu li { width: 100%;}
+
+/* list ********************************************* */
+#list-contents #list {
+	margin-left: inherit;
+	float: inherit;
+}
+
+.item-data {
+	position: relative;
+	height: 60px;
+	overflow: hidden;
+	line-height: 20px;
+}
+
+.item-data: before, .item-data: after {
+	position: absolute;
+	background: #fff;
+}
+
+.item-data: before {
+	content: "･･･";
+	bottom: 0;
+	right: 0;
+}
+
+.item-data: after {
+	content: "";
+	width: 100%;
+	height: 100%;
+}
+
+/* list-menu ############################################ */
+#list-menu {
+	margin-top: 30px;
+}
+
+#list-menu ul {
+	border-radius: 5px
+	-moz-bordert-radius: 5px;
+	-webki-border-radius: 5px;
+	border-radius: 5px;
+	padding: 10px 0;
+}
+
+#list-menu > ul {
+	border: 1px solid #000;
+	margin-bottom: 30px;
+}
+
+#list-menu ul li {
+}
+
+#list-menu ul li: last-child { border: none;}
+#list-menu ul li a {
+	display: block;
+	padding: 5px 10px;
+}
+
+#list-menu ul li ul { padding: 0 5px 20px 20px;}
+#list-menu ul p {
+	margin: -10px 0 10px 0;
+	font-weight: bold;
+	background: #000;
+	color: #fff;
+	padding: 5px 10px;
+	text-align: center;
+}
+
+#list-menu ul li ul li a {
+	padding: 3px 5px;
+	font-size: 90%;
+	font-weight: normal;
+}
+
+#list-menu ul li a:hover { background: #ccc;}
+
+/*===============================================
+	detail
+=============================================== */
+#detail-img {	
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+	float: none;
+}
+
+#detail-img img.detail-img {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#detail-include {
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+}
+
+#detail-data {
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+#detail-data h1 { font-weight: normal; font-size: 16px;}
+
+#data-block #item-data {
+	line-height: 180%;
+	width: 100%;
+	overflow: hidden;
+	margin: 0;
+}
+
+#detail-cart {
+	width: 100%;
+	border: 1px solid #000;
+	float: left;
+	overflow: hidden;
+	padding: 20px 10px 30px 10px;
+	margin-bottom: 40px;
+}
+
+#detail-include img.left {
+	float: none;
+	max-width: 100%;
+	height: 100%;
+	padding-bottom: 30px;
+}
+
+#detail-include table {
+	width: 100%;
+ 	border-collapse: collapse;
+ }
+
+#detail-include table th,#detail-include table td {
+	 display: block;
+	 text-align: left;
+	 width: 100%;
+ }
+
+#detail-include table th { background: #EEE;}
+#detail-include table td ul { margin: 0 0 0 20px;}
+
+/* footer ******************************************* */
+
+footer{
+	width: 100%;
+	min-width: 320px;
+}
+
+.footerarea {
+	width: 100%;
+	min-width: 320px;
+}
+
+}
+
+/* ###############################################
+
+	footer
+
+################################################ */
+footer{
+	height: 60px;
+	position : absolute;
+	bottom : 0;
+	width: 100%;
+	padding: 5px 0;
+	border-top: solid 1px #ccc;
+}
+
+.footerarea {
+	margin: auto;
+	width: 100%;
+	padding: 0 20px;
+}
+
+.footernavi { text-align: right; margin-bottom: 1.8em;}
+
+.footernavi a {
+	color: #636363;
+	font-size: 11px;
+	text-align: right;
+	white-space: nowrap;
+}
+
+.copyright {
+	font: 12px arial,helvetica,clean,sans-serif;
+	margin: auto;
+	text-align: center;
+	color: #636363;
+}
+
+
+/* ########################################
+
+	clearfix/end
+
+######################################## */
+.clearfix: after,.clear: after,.end: after {
+ content: "."; 
+ display: block; /* ブロックレベル要素 */
+ clear: both;
+ height: 0;
+ visibility: hidden;
+}
+
+clearfix,.clear,.end {
+ min-height: 1px;
+}
+
+* html .cleafixr,
+* html .clear,
+* html .end {
+ height: 1px;
+ /*\*//*/
+ height: auto;
+ overflow: hidden;
+ /**/
+}
+
+
+
+/* ########################################
+
+	detail-include
+
+######################################## */
+
+#item-detail .variation ,
+#item-detail .variation select {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif!important;
+	font-size: 14px;
+}
+#item-detail .variation select { width: 80%;}
+
+a { text-decoration: none;}
+.red { color: #f00;}
+.blue { color: #00F;}
+
+#detail-include,
+#deteil_specs {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif!important;
+	font-size: 14px;
+}
+
+#detail-include .hidden { display: none!important;}
+
+#detail-include .annotation /* 注釈 */ { font-size: 12px; line-height: 100%; margin: 10px 0;}
+
+.half { width: 370px; float: left; margin-right: 20px;}
+.half:nth-child(2) { margin-right: 0px!important;}
+
+#detail-include span { line-height: 150%;}
+
+#detail-include ul.number li {
+	list-style-type: decimal!important;
+}
+
+/* 分割 ################################## */
+#detail-include div.d2 {
+	width: 48%;
+	margin-right: 2%;
+	float: left;
+}
+
+#detail-include div.d2 h2,
+#detail-include div.d2 h3,
+#detail-include div.d3 h2,
+#detail-include div.d3 h3 {
+	font-size: 18px!important;
+}
+
+#detail-include div.d2:nth-child(2) {
+	margin: inherit;
+}
+
+#detail-include div.d3 {
+	width: 31%;
+	margin-right: 2%;
+	float: left;
+}
+
+.kakumouse div.d3 h2 {
+	font-size: 14px!important;
+}
+
+.kakumouse div.d3:nth-child(3) {
+	margin: inherit;
+	width: 32%;
+}
+#detail-include table,
+#deteil_specs table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 5px;
+}
+
+#detail-include table th,
+#deteil_specs table th { text-align: left;}
+
+#detail-include table th,
+#detail-include table td { padding: 10px; font-size: 14px;}
+
+#deteil_specs table th,
+#deteil_specs table td { padding: 10px; font-size: 14px!important;}
+
+#detail-include table.border { width: 100%;}
+#detail-include table.border th,
+#detail-include table.border td,
+#deteil_specs table.border th,
+#deteil_specs table.border td {
+	border: 1px solid #000;
+	font-size: 14px!important
+}
+
+#detail-include table.spec { width: 100%!important;}
+
+#detail-include table.spec th,
+#detail-include table.spec td,
+#deteil_specs table.spec th,
+#deteil_specs table.spec td {
+	border: 1px solid #000;
+	font-size: 14px!important;
+}
+
+#detail-include table.spec ul { margin: 0px 20px;}
+
+#detail-include table.spec th,
+#deteil_specs table.spec th { width: 20%;}
+
+#detail-include img { margin-bottom: 0px!important;}
+#detail-include img.center { margin: auto;}
+#detail-include .left,
+#detail-include img.left { float: left; margin-right: 10px;}
+#detail-include .right,
+#detail-include img.right { float: right; margin-left: 10px;}
+
+#detail-include li {
+	font-size: 14px;
+	line-height: 1.6em;
+}
+
+#detail-include p {
+	font-size: 14px!important;
+	line-height: 160%;
+	margin: 0;
+}
+
+#detail-include ul,
+#detail-include ol {
+	margin: 20px;
+}
+
+#detail-include ul li {
+	list-style: disc;
+}
+
+#detail-include ul.decimal li {
+	list-style: decimal;
+}
+
+
+#detail-include hr {
+	border: none;
+	margin: 30px 0;
+}
+
+@font-face {
+	font-family: "headfont";
+	src: url("/article/font/headfont.otf") format("otf");
+	src: url("/article/font/headfont.eot?#iefix") format("embedded-opentype"),
+		 url("/article/font/headfont.woff") format("woff"),
+		 url("/article/font/headfont.ttf") format("truetype");
+}
+
+#detail-include #title {
+	border: 1px solid #000;
+	border-bottom: none;
+}
+
+#detail-include #banner {
+	border: 1px solid #000;
+}
+
+#detail-include #banner:hover {
+	border: 1px solid #005dab;
+}
+
+body: first-of-type #detail-include #title {
+	padding: -1px;
+}
+
+#detail-include h2,#detail-include h3 {
+	font-family: "ヒラギノ角ゴ Pro W6","headfont", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif!important;
+	font-weight: bolder;
+	margin-bottom: 20px;
+	padding: 0;
+	line-height: 120%!important;
+}
+
+#detail-include h2 { font-size: 24px;}
+#detail-include h3 { font-size: 18px;}
+
+#detail-include h1.border,
+#detail-include h2,
+#detail-include h3 {
+	border-bottom: 1px solid #000;
+	border-top: 1px solid #000;
+	padding: 5px 0!important;
+}
+
+#detail-include h1.non-border,
+#detail-include h2.non-border,
+#detail-include h3.non-border {
+	border-bottom: inset;
+}
+
+.detail-include-block { margin-top: 20px;}
+
+div.link-button {
+	margin: auto;
+	width: 48%;
+}
+
+#detail-include .link-button a {
+	display: block;
+	color: #FFF;
+	border: 1px solid #000;
+ border-radius: 10px; /* CSS3草案 */ 
+ -webkit-border-radius: 10px; /* Safari,Google Chrome用 */ 
+ -moz-border-radius: 10px; /* Firefox用 */ 
+ background: -moz-linear-gradient(top, #888, #000); /* Firefox用 */ 
+	background: -webkit-gradient(linear, left top, left bottom, from(#888), to(#000)); /* Safari,Google Chrome用 */
+	padding: 5px!important;
+}
+
+#detail-include .link-button a:hover {
+	background: #000;
+}
+
+#detail-include .link-button p {
+	font-family: "ヒラギノ角ゴ Pro W6","headfont", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif!important;
+	text-align: center;
+	line-height: normal;
+	margin: 10px;
+	font-weight: bold;
+	font-size: 20px!important;
+}
+
+#detail-include .link-button p span {
+	font-size: 14px;
+}
+
+/* .mem-list ****************************************************** */
+.mem-list {
+width: 760px;
+background: #f0f0f0;
+padding: 10px;
+}
+
+.mem-list h3 { margin: 0; padding: 0;}
+
+.mem-list dl {
+border-bottom: 1px solid #aaa;
+border-top: none;
+width: 48%;
+vertical-align: top;
+/*display: -moz-inline-box; 
+display: inline-block;
+/display: inline; 
+/zoom: 1;*/
+margin-bottom: 10px;
+} 
+
+.mem-list dl:nth-child(odd) { float: right; }
+.mem-list dl:nth-child(even) { float: left; margin-right: 4%;}
+
+.mem-list dl dt,.mem-list dl dd {
+padding: 5px;
+}
+
+.mem-list dl dt{
+border-top: 1px solid #aaa;
+float: left;
+width: 30%;
+}
+
+.mem-list dl dd{
+border-top: 1px solid #aaa;
+_height: 1%; /* WinIEで頭の文字が右に微妙にずれるのを補正 */
+margin-left: 30%;
+}
+
+/* ********************************************************************* */
+.memory-list table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.memory-list th { font-weight: bold; text-align: left; font-size: 14px;}
+.memory-list td { font-size: 12px;}
+.memory-list td.px10 { font-size: 10px!important;}
+.memory-list th,.memory-list td { border: 1px solid #000; padding: 8px;}
+.memory-list td:nth-child(2),
+.memory-list td:nth-child(3),
+.memory-list td:nth-child(4),
+.memory-list td:nth-child(5){ text-align: center; width: 10%!important; word-wrap: break-word!important;}
+
+.memory-list tr:nth-child(even){ background: #eee; }
+
+
+
+/* ########################################
+
+	関連商品
+	rproduct
+
+######################################## */
+.rproduct {
+	margin-top: 60px;
+}
+
+.rproduct h4 {
+	font-size: 18px;
+	font-weight: bold;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	padding: 10px 0;
+	margin-bottom: 20px;
+}
+
+.rproduct div {
+	width: 25%;
+	box-sizing: border-box;
+	padding: 5px;
+	display: inline-table;
+}
+
+.rproduct a { display: table; text-align: center;}
+.rproduct p { text-align: left; font-size: 12px!important;}

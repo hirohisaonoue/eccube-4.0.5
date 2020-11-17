@@ -1,0 +1,1 @@
+[2020-11-12 11:07:29] app.INFO [N/A] [5e866bb] [1] [Eccube\Log\Logger:log:68] - PROCESS END ["admin_homepage_sale"] [GET, /ec/eccube-4.0.5/kanri/sale_chart, ::1, http://localhost/ec/eccube-4.0.5/kanri/, Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0]

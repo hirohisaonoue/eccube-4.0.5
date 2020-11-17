@@ -1,0 +1,50 @@
+# 管理画面
+sheeb_expand_product_column.admin.config.title: "追加項目設定"
+sheeb_expand_product_column.admin.config.subtitle: "商品情報項目追加プラグイン"
+
+sheeb_expand_product_column.admin.config.form_label: "項目管理"
+sheeb_expand_product_column.admin.config.add: "新規登録"
+sheeb_expand_product_column.admin.config.edit.form_label: "項目登録・編集"
+sheeb_expand_product_column.admin.config.edit.require: "必須"
+sheeb_expand_product_column.admin.config.edit.back: "戻る"
+sheeb_expand_product_column.admin.config.edit.register: "登録"
+
+sheeb_expand_product_column.admin.config.header.code: "コード"
+sheeb_expand_product_column.admin.config.header.example: "コード例"
+sheeb_expand_product_column.admin.config.header.name: "名前"
+sheeb_expand_product_column.admin.config.header.type: "タイプ"
+sheeb_expand_product_column.admin.config.header.is_multiple: "複数かどうか"
+sheeb_expand_product_column.admin.config.header.is_searchable: "検索対象かどうか"
+sheeb_expand_product_column.admin.config.header.setting: "選択肢設定"
+
+sheeb_expand_product_column.admin.config.delete.title: "削除"
+sheeb_expand_product_column.admin.config.delete.body: "この操作は元に戻せません。本当に削除してよろしいですか？"
+sheeb_expand_product_column.admin.config.delete.cancel: "キャンセル"
+sheeb_expand_product_column.admin.config.delete.execute: "削除する"
+
+# Types
+sheeb_expand_product_column.admin.config.types.text: "1行テキスト"
+sheeb_expand_product_column.admin.config.types.textarea: "テキストエリア"
+sheeb_expand_product_column.admin.config.types.selectbox: "セレクトボックス"
+sheeb_expand_product_column.admin.config.types.radiobutton: "ラジオボタン"
+sheeb_expand_product_column.admin.config.types.images: "画像ファイル"
+sheeb_expand_product_column.admin.config.types.checkbox: "チェックボックス"
+
+# Choices
+sheeb_expand_product_column.admin.config.choices.switch.on: "有効"
+sheeb_expand_product_column.admin.config.choices.switch.off: "無効"
+
+# Flush Messages
+sheeb_expand_product_column.admin.save.complete: "登録しました"
+sheeb_expand_product_column.admin.delete.complete: "削除しました"
+sheeb_expand_product_column.admin.save.failure.duplicated_code: "「コード」と「名前」は重複保存できません"
+
+# Product 管理画面
+sheeb_expand_product_column.admin.product.expand_columns: "拡張項目"
+
+# CSV Import系
+sheeb_expand_product_column.admin.product.csv.multiple: "複数指定する場合は「%separator%」区切り。"
+sheeb_expand_product_column.admin.product.csv.checkbox: "内部の配列は「%separator%」区切り。"
+sheeb_expand_product_column.admin.product.csv.images: "ファイル名を指定する。画像ファイルは「%path%」に配置。"
+sheeb_expand_product_column.admin.product.csv.settings: "指定できる値は次の中から選ぶ。「%choices%」"
+sheeb_expand_product_column.admin.product.csv.illegal_choice: "指定の選択肢「%choice%」は存在しません。"

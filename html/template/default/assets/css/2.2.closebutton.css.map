@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/component/2.2.closebutton.scss"
+    ],
+    "names": [],
+    "file": "2.2.closebutton.css"
+}

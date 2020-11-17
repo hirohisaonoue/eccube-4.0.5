@@ -1,0 +1,190 @@
+<script type="application/javascript">
+  var sheeb_expand_product_column_del_code = "%%__dEl__%%";
+  
+  // onLoad
+  document.addEventListener("DOMContentLoaded", function() {
+    var FileUploader = new SheebExpandProductColumn_FileUploader();
+    FileUploader.event($('.sheeb_file'));
+
+    var FieldBuilder = new SheebExpandProductColumn_FieldBuilder(FileUploader);
+    FieldBuilder.event($(document));
+  });
+
+  // ====================================================================
+  //                            FileUploader
+  // ====================================================================
+  function SheebExpandProductColumn_FileUploader()
+  {
+    var self = this;
+    SheebExpandProductColumn_FileUploader.prototype.event = function (target)
+    {
+      var
+        api_url = '{{ url('sheeb_expand_product_column_image_add') }}',
+        temp_path = '{{ asset('', 'temp_image') }}',
+        err_message1 = '{{ 'admin.product.product.497' | trans }}',
+        err_message2 = '{{ 'admin.product.product.498' | trans }}'
+      ;
+
+      target.find('.sheeb_uploader').fileupload({
+        url: api_url,
+        type: "post",
+        sequentialUploads: true,
+        dropZone: null,
+        dataType: 'json',
+        done: function (e, data) {
+          var me = $(this);
+          $('#progress').hide();
+          $.each(data.result.files, function (index, file) {
+            // Thumbnail追加
+            var
+              path = temp_path + file,
+              thumb = $('#' + me.data('thumb')),
+              new_image = $('<div class="sheeb c-form__fileUploadThumbnail" style="background-image:url(' + path + ');">' +
+                '<span class="delete-image"><i class="fa fa-times" aria-hidden="true"></i></span>' +
+                '</div>');
+
+            // 要素とイベントの追加
+            thumb.empty();
+            thumb.append(new_image);
+            self.event(new_image);
+
+            // フォームにvalueを反映
+            $('#' + me.data('send-value')).val(file);
+          });
+        },
+        fail: function (e, data) {
+          alert(err_message1);
+        },
+        always: function (e, data) {
+          $('#progress').hide();
+          $('#progress .progress-bar').width('0%');
+        },
+        start: function (e, data) {
+          $('#progress').show();
+        },
+        acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+        maxFileSize: 10000000,
+        maxNumberOfFiles: 10,
+        progressall: function (e, data) {
+          var progress = parseInt(data.loaded / data.total * 100, 10);
+          $('#progress .progress-bar').css(
+            'width',
+            progress + '%'
+          );
+        },
+        processalways: function (e, data) {
+          if (data.files.error) {
+            alert(err_message2);
+          }
+        }
+      });
+
+      target.find('.delete-image').on("click", function() {
+        var input = $(this).parents('div.sheeb_file').find('input[type="hidden"]');
+        input.val(sheeb_expand_product_column_del_code);
+
+        var thumbnail = $(this).parents('div.c-form__fileUploadThumbnail');
+        $(thumbnail).find('input').val(sheeb_expand_product_column_del_code);
+        $(thumbnail).remove();
+      });
+    };
+  }
+
+  // ====================================================================
+  //                            FieldBuilder
+  // ====================================================================
+  function SheebExpandProductColumn_FieldBuilder(FileUploader)
+  {
+    var self = this;
+    var fileUploader = FileUploader;
+    
+    SheebExpandProductColumn_FieldBuilder.prototype.event = function (target)
+    {
+      var
+        minus = target.find('.sheeb_expand_product_column_minus'),
+        plus = target.find('.sheeb_expand_product_column_plus'),
+        HIDDEN = 'hidden';
+
+      // フィールド削除
+      minus.click(function () {
+        var
+          me = $(this),
+          row_id = me.data('myself'),
+          column_id = me.data('column'),
+          input = $('.value_' + row_id);
+
+        // 削除対象を hidden にする
+        $('.row_' + row_id).addClass(HIDDEN);
+        $('.buttons_' + row_id).addClass(HIDDEN);
+
+        // 削除対象以外に、同フィールドが存在しないなら1つ新規フィールドを増やす
+        var row_groups = $('.row_group_' + column_id).not('.' + HIDDEN);
+        if (row_groups.length < 1) {
+          addField($('.plus_' + row_id));
+        }
+
+        // 削除対象のvalueを削除コードにする
+        input.val(sheeb_expand_product_column_del_code);
+        var options = input.find('option');
+        if (options) {
+          options.prop('selected', false);
+          options.val(sheeb_expand_product_column_del_code);
+        }
+        var checks = input.find('input[type="checkbox"]');
+        if (checks) {
+          checks.prop('checked', false);
+          checks.val(sheeb_expand_product_column_del_code);
+        }
+        var radios = input.find('input[type="radio"]');
+        if (radios) {
+          radios.prop('checked', false);
+          radios.val(sheeb_expand_product_column_del_code);
+        }
+
+        // 同フィールドグループ内で一番下にあるものの＋ボタンを表示
+        $('.plus_' + row_groups.filter(':last').data('myself'))
+          .parent().removeClass(HIDDEN);
+      });
+
+      // フィールド追加
+      plus.click(function () {
+        addField($(this));
+      });
+    };
+
+    function addField (plus)
+    {
+      var
+        me = plus,
+        column_group_class = 'button_group_' + me.data('column'),
+        parent = me.parents('.sheeb_expand_product_column'),
+        row_id = me.data('next'),
+        count_element = $('#sheeb_expand_product_column_total'),
+        count = parseInt(count_element.data('count')) + 1;
+
+      $.ajax({
+          url: '{{ app.request.baseUrl }}/{{ eccube_config.eccube_admin_route }}/sheeb_expand_product_column/column_value/' + row_id + '/add/' + count,
+      })
+        .done(function (response) {
+          $('.sheeb_expand_product_column_button.plus.' + column_group_class).addClass('hidden');
+          // HTML追加
+          var append = $(response);
+          parent.after(append);
+          // 追加項目にもイベント追加
+          self.event(append);
+          // フィールド数カウント更新
+          count_element.data('count', count);
+          count_element.attr('data-count', count);
+          // 画像イベントも追加
+          fileUploader.event(append);
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+          console.log('追加失敗');
+        });
+    }
+  }
+  
+  //# sourceURL=sheeb_expand_product_column.js
+</script>
+
+

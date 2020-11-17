@@ -1,0 +1,122 @@
+{#
+Project Name: 商品情報項目追加プラグイン for 4.0
+Copyright(c) 2018 Kenji Nakanishi. All Rights Reserved.
+
+https://www.facebook.com/web.kenji.nakanishi
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+{% extends '@admin/Form/bootstrap_4_horizontal_layout.html.twig' %}
+
+{% form_theme form _self %}
+
+{# 1件のColumnValueを出力 #}
+{% macro build(column_value, options) %}
+    {## このデータのID #}
+    {% set row_id = options.product_id ~ "/" ~ options.column_id ~ "/" ~ options.sequence %}
+    {% set row_id_hyphen = options.product_id ~ "-" ~ options.column_id ~ "-" ~ options.sequence %}
+    {## このカラムID #}
+    {% set column_id = options.column_id %}
+    {## このデータの次のシーケンスID #}
+    {% set next_id = options.product_id ~ "/" ~ options.column_id ~ "/" ~ options.next %}
+    {## このデータの前のシーケンスID #}
+    {% set prev_id = options.product_id ~ "/" ~ options.column_id ~ "/" ~ options.prev %}
+    {## 追加ボタンの非表示class #}
+    {% set plus_hidden = "" %}
+    {## 削除ボタンの非表示class #}
+    {% set minus_hidden = "" %}
+    {## 次のシーケンス要素が存在するか否かで変化する変数 #}
+    {% if options.next_exist %}
+        {% set plus_hidden = "hidden" %}
+    {% endif %}
+    {## 前のシーケンス要素が存在するか否かで変化する変数 #}
+    {% if options.prev_exist %}
+    {% endif %}
+
+    {# 本体HTML #}
+    <div class="row row_group_{{ column_id }} row_{{ row_id_hyphen }}" data-myself="{{ row_id_hyphen }}">
+        <div class="col-3">
+            {{ form_label(column_value.value) }}
+        </div>
+        <div class="col mb-2">
+            <div>
+                {% if column_value.value.vars.eccube_form_options.type == "images" %}
+                    {% import _self as method %}
+                    {{ method.renderFile(column_value.value) }}
+                {% else %}
+                    {{ form_widget(column_value.value, { 'attr': {'class': 'value_' ~ row_id_hyphen}}) }}
+                {% endif %}
+                {{ form_errors(column_value.value) }}
+                {{ form_widget(column_value.Product) }}
+                {{ form_widget(column_value.ProductColumn) }}
+                {{ form_widget(column_value.sequence) }}
+            </div>
+        </div>
+    </div>
+
+    {# 追加・削除ボタン #}
+    {% if (options.multiple) %}
+        <div class="row sheeb_expand_product_column buttons_group_{{ column_id }} buttons_{{ row_id_hyphen }}">
+            <div class="col mb-2 sheeb_expand_product_column_button_area">
+                <div class="sheeb_expand_product_column_button minus button_group_{{ column_id }} {{ minus_hidden }}">
+                    <button class="sheeb_expand_product_column_minus btn btn-ec-regular px-3" type="button"
+                            data-prev="{{ prev_id }}" data-column="{{ column_id }}" data-myself="{{ row_id_hyphen }}"
+                    >
+                        <span>−</span>
+                    </button>
+                </div>
+                <div class="sheeb_expand_product_column_button plus button_group_{{ column_id }} {{ plus_hidden }}">
+                    <button class="sheeb_expand_product_column_plus btn btn-ec-regular plus_{{ row_id_hyphen }} px-3" type="button"
+                            data-next="{{ next_id }}" data-column="{{ column_id }}"
+                    >
+                        <span>＋</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro renderFile(value) %}
+    <div class="col mb-2 sheeb_file">
+        <input type="file" id="{{ value.vars.id }}"
+               data-thumb="{{ value.vars.id }}_thumb"
+               data-send-value="{{ value.vars.id }}_send_value"
+               accept="image/*"
+               class="hidden sheeb_uploader form-control-file form-control-file"
+        >
+        <input type="hidden" id="{{ value.vars.id }}_send_value" name="{{ value.vars.full_name }}" value="{{ value.vars.data }}" />
+        <div class="btn btn-success fileinput-button" onclick="$('#{{ value.vars.id }}').click()">
+            <i class="glyphicon glyphicon-plus"></i>
+            <span>Select file...</span>
+        </div>
+        <div id="{{ value.vars.id }}_thumb">
+            {% if value.vars.data %}
+            <div class="sheeb c-form__fileUploadThumbnail" style="background-image:url({{ asset('', 'save_image') ~ value.vars.data }});">
+                <span class="delete-image"><i class="fa fa-times" aria-hidden="true"></i></span>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% block form_row %}
+    {% import _self as method %}
+    <hr>
+    <p id="sheeb_expand_product_column_total" data-count="{{ form.children|length }}" class="card-title">
+        <strong>{{ "sheeb_expand_product_column.admin.product.expand_columns"|trans }}</strong>
+    </p>
+    {% for column_value in form %}
+        {% if column_value is not empty %}
+            {% set options = column_value.value.vars.eccube_form_options %}
+            {{ method.build(column_value, options) }}
+        {% endif %}
+    {% endfor %}
+{% endblock form_row %}
+
+{% block form_label %}
+    {% if label is not same as(false) %}
+        <span>{{ label }}</span>
+    {% endif %}
+{% endblock form_label %}
